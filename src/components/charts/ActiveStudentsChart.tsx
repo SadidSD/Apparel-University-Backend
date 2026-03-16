@@ -23,17 +23,17 @@ const data = [
 
 const ActiveStudentsChart = () => {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-[350px] flex flex-col relative w-full">
+    <div className="bg-card p-6 rounded-2xl shadow-sm border border-border h-[350px] flex flex-col relative w-full transition-colors">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-[#333333] font-bold text-lg">Active Students</h3>
-        <select className="bg-white border text-sm font-medium border-gray-200 text-gray-600 rounded-md px-3 py-1 outline-none">
+        <h3 className="text-card-foreground font-bold text-lg transition-colors">Active Students</h3>
+        <select className="bg-background border text-sm font-medium border-border text-card-foreground rounded-md px-3 py-1 outline-none transition-colors">
           <option>Weekly</option>
           <option>Monthly</option>
           <option>Yearly</option>
         </select>
       </div>
       
-      <div className="flex-1 w-full">
+      <div className="flex-1 w-full relative">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={data}
@@ -71,9 +71,9 @@ const ActiveStudentsChart = () => {
         </ResponsiveContainer>
         
         {/* Floating manual tooltip to match screenshot precisely */}
-        <div className="absolute top-[40%] left-[45%] -translate-x-1/2 bg-white px-4 py-2 rounded-lg shadow-md border border-gray-50 flex flex-col items-center">
-          <span className="font-bold text-[#333333] text-sm">456 <span className="font-normal text-gray-500 text-xs">Order</span></span>
-          <span className="text-gray-400 text-[10px]">Oct 18th, 2020</span>
+        <div className="absolute top-[40%] left-[45%] -translate-x-1/2 bg-card px-4 py-2 rounded-lg shadow-md border border-border flex flex-col items-center transition-colors">
+          <span className="font-bold text-card-foreground text-sm transition-colors">456 <span className="font-normal text-gray-500 dark:text-zinc-500 text-xs transition-colors">Order</span></span>
+          <span className="text-gray-400 dark:text-zinc-500 text-[10px] transition-colors">Oct 18th, 2020</span>
         </div>
       </div>
     </div>

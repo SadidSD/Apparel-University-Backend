@@ -41,10 +41,10 @@ const CustomTooltip = ({ active, payload }: any) => {
 
 const UpdatePackageChart = () => {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-[400px] flex flex-col">
+    <div className="bg-card p-6 rounded-2xl shadow-sm border border-border h-[400px] flex flex-col transition-colors">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-[#333333] font-bold text-xl">Update Package</h3>
-        <div className="flex items-center gap-4 text-sm font-medium text-gray-400">
+        <h3 className="text-card-foreground font-bold text-xl transition-colors">Update Package</h3>
+        <div className="flex items-center gap-4 text-sm font-medium text-gray-400 dark:text-zinc-500">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#2D9CDB]"></span>
             2020
@@ -62,7 +62,7 @@ const UpdatePackageChart = () => {
             data={data}
             margin={{ top: 20, right: 30, left: -20, bottom: 0 }}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={true} horizontal={false} stroke="#f0f0f0" />
+            <CartesianGrid strokeDasharray="3 3" vertical={true} horizontal={false} stroke="#f0f0f0" className="dark:stroke-zinc-900" />
             <XAxis 
               dataKey="name" 
               axisLine={false} 
@@ -107,10 +107,10 @@ const UpdatePackageChart = () => {
         </ResponsiveContainer>
         
         {/* Custom manual tooltips floating for the static screenshot look */}
-        <div className="absolute top-[8%] left-[55%] -translate-x-1/2 bg-[#E3F2FD] text-[#2D9CDB] px-3 py-1 rounded-md shadow-sm font-semibold text-xs whitespace-nowrap">
+        <div className="absolute top-[8%] left-[55%] -translate-x-1/2 bg-[#E3F2FD] dark:bg-zinc-900 text-[#2D9CDB] px-3 py-1 rounded-md shadow-sm font-semibold text-xs whitespace-nowrap transition-colors border border-transparent dark:border-zinc-800">
           $ 38.753,00
         </div>
-        <div className="absolute top-[65%] left-[81%] -translate-x-1/2 bg-[#FFEAEA] text-[#FF5A5F] px-3 py-1 rounded-md shadow-sm font-semibold text-xs whitespace-nowrap">
+        <div className="absolute top-[65%] left-[81%] -translate-x-1/2 bg-[#FFEAEA] dark:bg-red-950/30 text-[#FF5A5F] px-3 py-1 rounded-md shadow-sm font-semibold text-xs whitespace-nowrap transition-colors border border-transparent dark:border-red-900/50">
           $ 18.657,00
         </div>
       </div>

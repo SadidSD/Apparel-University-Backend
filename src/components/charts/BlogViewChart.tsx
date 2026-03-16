@@ -24,10 +24,10 @@ const data = [
 
 const BlogViewChart = () => {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-[350px] flex flex-col w-full">
+    <div className="bg-card p-6 rounded-2xl shadow-sm border border-border h-[350px] flex flex-col w-full transition-colors">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-[#333333] font-bold text-lg">Blog View</h3>
-        <select className="bg-white text-sm font-medium border border-gray-200 text-gray-600 rounded-md px-3 py-1 outline-none">
+        <h3 className="text-card-foreground font-bold text-lg transition-colors">Blog View</h3>
+        <select className="bg-background text-sm font-medium border border-border text-card-foreground rounded-md px-3 py-1 outline-none transition-colors">
           <option>Weekly</option>
           <option>Monthly</option>
           <option>Yearly</option>
@@ -41,7 +41,7 @@ const BlogViewChart = () => {
             margin={{ top: 20, right: 0, left: -25, bottom: 0 }}
             barSize={12}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" className="dark:stroke-zinc-900" />
             <XAxis 
               dataKey="name" 
               axisLine={false} 
