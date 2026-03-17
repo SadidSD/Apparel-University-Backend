@@ -1,12 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Header from '@/components/Header';
 import { ChevronDown, Reply, UploadCloud, Save, Trash2, Edit3, Type, Hash, Layers } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function CreateBlogPage() {
+  return (
+    <Suspense fallback={<div className="w-full min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-[#2D9CDB]/30 border-t-[#2D9CDB] rounded-full animate-spin"></div></div>}>
+      <CreateBlogContent />
+    </Suspense>
+  );
+}
+
+function CreateBlogContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const id = searchParams.get('id');
